@@ -63,3 +63,5 @@ for(i in 7:12){
   an=aug[paste0('2015-08-',i)]
   lines(data.frame(index(kn),as.numeric(coredata(an))))
 }
+
+plot(aug, xaxs="i")
