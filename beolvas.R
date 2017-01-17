@@ -67,3 +67,12 @@ for(i in 7:12){
 }
 
 plot(aug, xaxs="i")
+
+t.test(aug['2015-08-05'],aug['2015-08-06'])
+kn=aug['2015-08-05']
+an=aug['2015-08-06']
+t.test(kn,an)
+
+aug2n=aug['2015-08-05/2015-08-06']
+boxplot(coredata(aug2n) ~ format(index(aug2n),"%d"))
+t.test(coredata(aug2n) ~ format(index(aug2n),"%d"))
