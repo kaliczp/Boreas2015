@@ -1,3 +1,5 @@
+## Időzóna beállítása
+Sys.setenv(TZ="UTC")
 ## Hőmérséklet beolvasás függvénye
 beolvas <- function(file) {
   require(xts)
