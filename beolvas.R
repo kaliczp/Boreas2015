@@ -76,3 +76,16 @@ t.test(kn,an)
 aug2n=aug['2015-08-05/2015-08-06']
 boxplot(coredata(aug2n) ~ format(index(aug2n),"%d"))
 t.test(coredata(aug2n) ~ format(index(aug2n),"%d"))
+
+aug2n.df = data.frame(hőm=as.numeric(coredata(aug2n)),
+           nap=as.factor(format(index(aug2n),"%d")))
+
+t.test(hőm ~ nap, data = aug2n.df)
+boxplot(hőm ~ nap, data = aug2n.df)
+
+t.test(hőm ~ nap, data = aug2n.df, alt="l")
+t.test(hőm ~ nap, data = aug2n.df, pair=T)
+var.test(hőm ~ nap, data = aug2n.df)
+
+wilcox.test(hőm ~ nap, data = aug2n.df)
+
