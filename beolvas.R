@@ -88,5 +88,24 @@ t.test(hőm ~ nap, data = aug2n.df, alt="l")
 t.test(hőm ~ nap, data = aug2n.df, pair=T)
 var.test(hőm ~ nap, data = aug2n.df)
 
+hist(aug2n.df[aug2n.df$nap=="05",1])
+
+## Tesztek normális eloszlásra
+ks.test(aug2n.df[aug2n.df$nap=="05",1],"pnorm")
+shapiro.test(aug2n.df[aug2n.df$nap=="05",1])
+
+## qqplot normál eloszlásra
+qqnorm(aug2n.df[aug2n.df$nap=="05",1])
+## kvartiliseken (25 és 75-ös percentilis) átmenő vonal
+qqline(aug2n.df[aug2n.df$nap=="05",1])
+
+## Ellenőrzés generált normál eloszlású véletlen számokkal
+qqnorm(rnorm(144))
+qqline(rnorm(144))
+
+# Két napra
+qqnorm(aug2n.df[,1])
+qqline(aug2n.df[,1])
+ 
 wilcox.test(hőm ~ nap, data = aug2n.df)
 
