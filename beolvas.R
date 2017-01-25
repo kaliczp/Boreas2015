@@ -84,6 +84,7 @@ t.test(hőm ~ nap, data = aug2n.df)
 boxplot(hőm ~ nap, data = aug2n.df)
 
 t.test(hőm ~ nap, data = aug2n.df, alt="l")
+
 t.test(hőm ~ nap, data = aug2n.df, pair=T)
 var.test(hőm ~ nap, data = aug2n.df)
 
